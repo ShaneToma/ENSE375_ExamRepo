@@ -75,7 +75,10 @@ public class Time12
 	{
 		int difference=0;
 		//Todo: add your code here
+		Time24 first = t1.toTime24();
+		Time24 second = t2.toTime24();
 
+		difference = (first.hours * 60 + first.minutes) - (second.hours*60 + second.minutes);
 		// end of your code
 		return difference;
 	}

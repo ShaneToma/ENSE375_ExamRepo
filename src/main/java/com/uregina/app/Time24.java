@@ -15,10 +15,10 @@ public class Time24
 	 * @param hours 		hours of 24-hour time format (0:23)
 	 * @param minutes	minutes of 24-hour time format (0:59)
 	*/
-	public Time24(int hours, int minutes)//throws InvalidTimeException
+	public Time24(int hours, int minutes)throws InvalidTimeException
     {
-		//if(hours<0||hours>=24) throw new InvalidTimeException();
-		//if(minutes<0||minutes>=60) throw new InvalidTimeException();
+		if(hours<0||hours>=24) throw new InvalidTimeException();
+		if(minutes<0||minutes>=60) throw new InvalidTimeException();
 		this.hours=hours;
 		this.minutes=minutes;
     }
@@ -49,10 +49,16 @@ public class Time24
 	{
 		Time24 time=null;
 		//Todo : add your code here
-		if(am_pm == AmPm.am)
+		if(am_pm == AmPm.am){
+			try{
 			time = new Time24(hours, minutes);
-		else
+			}catch(Exception InvalidTimeException){}
+		}
+		else{
+			try{
 			time = new Time24(hours + 12, minutes);
+			}catch(Exception InvalidTimeException){}
+		}
 		// End of your code
 		return time;
 	}
