@@ -252,7 +252,7 @@ public class AppTest
                 DateTime.subtract(d1,d2);
             });
     }catch(Exception invalidDatException){}
-    }
+    }*/
 
     @Test
     public void DateTimeSub_test2 (){
@@ -270,7 +270,7 @@ public class AppTest
             DateTime d2 = new DateTime(new Date(1,1,2002), new Time12(6,0,AmPm.pm));
             assertEquals(DateTime.subtract(d1, d2), 2160);
         }catch(Exception invalidDatException){}
-    }*/
+    }
 
 
 //**************SITUATIONS TO CONSIDER*************************
