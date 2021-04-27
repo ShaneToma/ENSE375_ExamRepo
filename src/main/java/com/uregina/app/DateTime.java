@@ -52,6 +52,13 @@ public class DateTime
 		int diff=0;
 		//Todo: add your code here
 
+		if(d1.getDate().nextDate() != d2.getDate() && d2.getDate().nextDate() != d1.getDate() && d1.getDate() != d2.getDate()) throw new MoreThanOneDayException();
+
+		diff = (d1.getDate().getDay() - d2.getDate().getDay()) * 24;		//get minutes difference between days
+		if(diff > (24*60) || diff < (24*60))
+			diff = 24*60;
+		diff = diff + (Time12.subtract(d1.getTime(), d2.getTime()));	//get minutes difference between times
+
 		//end of your code
 		return diff;
 	}

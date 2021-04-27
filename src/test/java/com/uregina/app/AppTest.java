@@ -1,7 +1,13 @@
 package com.uregina.app;
 
+
+
+import com.uregina.exceptions.MoreThanOneDayException;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -236,7 +242,35 @@ public class AppTest
         }catch(Exception InvalidDateException){}
     }
 
-    
+//////////////////Question 5 tests///////////////////////////////////////////
+    @Test
+    public void DateTimeSub_test1 (){
+        try{
+            DateTime d1 = new DateTime(new Date(1,1,2001), new Time12(6,0,AmPm.am));
+            DateTime d2 = new DateTime(new Date(1,1,2002), new Time12(6,0,AmPm.am));
+            assertThrows(MoreThanOneDayException.class, () -> {
+                DateTime.subtract(d1,d2);
+            });
+    }catch(Exception invalidDatException){}
+    }
+
+    @Test
+    public void DateTimeSub_test2 (){
+        try{
+            DateTime d1 = new DateTime(new Date(1,1,2001), new Time12(6,0,AmPm.pm));
+            DateTime d2 = new DateTime(new Date(1,2,2002), new Time12(4,0,AmPm.am));
+            assertEquals(DateTime.subtract(d1, d2), 1320);
+        }catch(Exception invalidDatException){}
+    }
+
+    @Test
+    public void DateTimeSub_test3 (){
+        try{
+            DateTime d1 = new DateTime(new Date(12,31,2001), new Time12(6,0,AmPm.am));
+            DateTime d2 = new DateTime(new Date(1,1,2002), new Time12(6,0,AmPm.pm));
+            assertEquals(DateTime.subtract(d1, d2), 2160);
+        }catch(Exception invalidDatException){}
+    }
 
 
 //**************SITUATIONS TO CONSIDER*************************
