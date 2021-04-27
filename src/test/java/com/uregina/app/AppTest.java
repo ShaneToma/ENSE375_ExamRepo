@@ -1,6 +1,7 @@
 package com.uregina.app;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 /**
@@ -128,6 +129,115 @@ public class AppTest
         assertTrue(dif == -721);
         }catch(Exception InvalidTimeException){}
     }
+
+//////////////////Question 4 tests///////////////////////////////////////////
+    @Test
+    public void DateLessThan_test1 (){
+        //mdy
+        try{
+        Date d1 = new Date(1,1,2001);
+        Date d2 = new Date(2,2,2002);
+
+        assertTrue(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    @Test
+    public void DateLessThan_test2 (){
+        //mdy
+        try{
+        Date d1 = new Date(1,1,2001);
+        Date d2 = new Date(1,2,2001);
+
+        assertTrue(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+    
+    @Test
+    public void DateLessThan_test3 (){
+        //mdy
+        try{
+        Date d1 = new Date(2,1,2002);
+        Date d2 = new Date(1,2,2001);
+
+        assertFalse(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+    @Test
+    public void DateLessThan_test4 (){
+        //mdy
+        try{
+        Date d1 = new Date(1,1,2002);
+        Date d2 = new Date(1,1,2001);
+
+        assertFalse(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+    @Test
+    public void DateLessThan_test5 (){
+        //mdy
+        try{
+        Date d1 = new Date(2,1,2001);
+        Date d2 = new Date(1,1,2002);
+
+        assertTrue(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+    @Test
+    public void DateLessThan_test6 (){
+        //mdy
+        try{
+        Date d1 = new Date(1,1,2001);
+        Date d2 = new Date(2,1,2001);
+
+        assertTrue(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+    @Test
+    public void DateLessThan_test7 (){
+        //mdy
+        try{
+        Date d1 = new Date(2,2,2001);
+        Date d2 = new Date(1,1,2001);
+
+        assertFalse(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+    @Test
+    public void DateLessThan_test8 (){
+        //mdy
+        try{
+        Date d1 = new Date(1,2,2002);
+        Date d2 = new Date(2,1,2001);
+
+        assertFalse(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+    @Test
+    public void DateLessThan_test9 (){
+        //mdy
+        try{
+        Date d1 = new Date(1,2,2001);
+        Date d2 = new Date(1,1,2002);
+
+        assertTrue(Date.lessThan(d1, d2));
+        }catch(Exception InvalidDateException){}
+    }
+
+    
+
 
 //**************SITUATIONS TO CONSIDER*************************
     //too short airport code
