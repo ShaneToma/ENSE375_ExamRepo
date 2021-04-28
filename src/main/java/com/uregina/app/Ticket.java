@@ -15,9 +15,9 @@ public class Ticket
 	 * The function checks the validaity of a ticket
 	 * It checks
 	 *		1. airports code are in IATA format (any three uppercases letters)
-  	 *        2. maximum flights Count >= number of flights in the ticket
-     *        3. maximum flight time >= Total flight times ( sum of flight time of each flight)
-     *        4. maximum layover time >= Total layover times ( sum of layover time between each two consecutive flight)
+  	 *      2. maximum flights Count >= number of flights in the ticket
+     *      3. maximum flight time >= Total flight times ( sum of flight time of each flight)
+     *      4. maximum layover time >= Total layover times ( sum of layover time between each two consecutive flight)
 	 *		5. no flight between two airports in the Schengen area unless the passenger has a valid SchengenVisa
 	 *		6. no cyclic trip
 	 *		7. The sequence of flights in correct ( the arrival airport of a flight is the departure airport of the next flight)
@@ -38,6 +38,52 @@ public class Ticket
 	public static boolean checkTicket( ArrayList<Flight> ticket, int maxFlightsCount, int maxFlightTime, int maxLayoverTime, boolean hasSchengenVisa)
 	{
 		//Todo: add your code here
+		//Number of flights
+		if(maxFlightsCount < ticket.size())
+		return(false);
+
+		//Time of flight
+		int flightTime = 0;
+		for(int i = 0; i < ticket.size(); i++){
+			flightTime = flightTime + ticket.get(i).calculateFlightTime;
+		}
+		if(maxFlightTime < flightTime)
+		return false;
+
+		//Time of layover
+		int layoverTime = 0;
+		for(int j = 0; j < ticket.size()-1; j++){
+			layoverTime = layovertTime + Flight.calculateLayoverTime(ticket.get(j), ticket.get(j+1));
+		}
+		if(maxLayoverTime < layoverTime)
+		return false;
+
+		//Schengen visa
+		if(hasSchengenVisa == false){
+			for(int k = 0; k < ticket.size(); k++){
+				for(int l = 0; l < SchengenAirportsCode.length; l++){
+					if(ticket.get(k).getDepatureAirport().equals(SchengenAirport[l])){
+						return false;
+					}
+				}
+			}
+		}
+
+		//Check Airport Code
+		for(int code = 0; code < ticket.size(); code ++){
+			if(ticket.get(i).length() != 3)
+			return false;
+			if(ticket.get(i).departureAirport.charAt(0) < 65 || ticket.get(i).departureAirport.charAt(0) > 90)
+			return false;
+			if(ticket.get(i).departureAirport.charAt(1) < 65 || ticket.get(i).departureAirport.charAt(1) > 90)
+			return false;
+			if(ticket.get(i).departureAirport.charAt(2) < 65 || ticket.get(i).departureAirport.charAt(2) > 90)
+			return false;
+		}
+
+		//check cyclic trip
+		if(Ticket.hasCyclicTrip(ticket))
+			return false;
 		
 
 		//end of your code

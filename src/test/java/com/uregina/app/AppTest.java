@@ -250,7 +250,7 @@ public class AppTest
             DateTime d2 = new DateTime(new Date(1,1,2002), new Time12(6,0,AmPm.am));
             assertThrows(MoreThanOneDayException.class, () -> {
                 DateTime.subtract(d1,d2);
-            });
+            });444
     }catch(Exception invalidDatException){}
     }*/
 
@@ -272,6 +272,7 @@ public class AppTest
         }catch(Exception invalidDatException){}
     }
 
+//////////////////Question 6 tests///////////////////////////////////////////
 
 //**************SITUATIONS TO CONSIDER*************************
     //too short airport code
