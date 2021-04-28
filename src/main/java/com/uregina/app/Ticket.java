@@ -37,7 +37,7 @@ public class Ticket
 	*/
 	public static boolean checkTicket( ArrayList<Flight> ticket, int maxFlightsCount, int maxFlightTime, int maxLayoverTime, boolean hasSchengenVisa)
 	{
-		//Todo: add your code here
+		/*/Todo: add your code here
 		//Number of flights
 		if(maxFlightsCount < ticket.size())
 		return(false);
@@ -83,7 +83,7 @@ public class Ticket
 
 		//check cyclic trip
 		if(Ticket.hasCyclicTrip(ticket))
-			return false;
+			return false;*/
 		
 
 		//end of your code
