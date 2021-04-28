@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uregina.app.AppTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2021-04-27T23:49:37" hostname="CRACKPC" time="0.024">
+<testsuite name="com.uregina.app.AppTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2021-04-28T00:49:58" hostname="CRACKPC" time="0.018">
   <properties/>
   <testcase name="shouldAnswerWithTrue" classname="com.uregina.app.AppTest" time="0.005"/>
-  <testcase name="Sub12Hr_test1" classname="com.uregina.app.AppTest" time="0.0"/>
+  <testcase name="Sub12Hr_test1" classname="com.uregina.app.AppTest" time="0.001"/>
   <testcase name="Sub12Hr_test2" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="Sub12Hr_test3" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="Sub12Hr_test4" classname="com.uregina.app.AppTest" time="0.001"/>
+  <testcase name="Sub12Hr_test3" classname="com.uregina.app.AppTest" time="0.001"/>
+  <testcase name="Sub12Hr_test4" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="Sub12Hr_test5" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="Sub12Hr_test6" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="Sub12Hr_test7" classname="com.uregina.app.AppTest" time="0.0"/>
+  <testcase name="Sub12Hr_test7" classname="com.uregina.app.AppTest" time="0.001"/>
   <testcase name="Sub12Hr_test8" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="Sub12Hr_test9" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="time24_am" classname="com.uregina.app.AppTest" time="0.001"/>
+  <testcase name="time24_am" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="time24_pm" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="DateLessThan_test1" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="DateLessThan_test2" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="DateLessThan_test3" classname="com.uregina.app.AppTest" time="0.001"/>
-  <testcase name="DateLessThan_test4" classname="com.uregina.app.AppTest" time="0.002"/>
+  <testcase name="DateLessThan_test3" classname="com.uregina.app.AppTest" time="0.0"/>
+  <testcase name="DateLessThan_test4" classname="com.uregina.app.AppTest" time="0.001"/>
   <testcase name="DateLessThan_test5" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="DateLessThan_test6" classname="com.uregina.app.AppTest" time="0.001"/>
+  <testcase name="DateLessThan_test6" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="DateLessThan_test7" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="DateLessThan_test8" classname="com.uregina.app.AppTest" time="0.0"/>
   <testcase name="DateLessThan_test9" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="DateTimeSub_test1" classname="com.uregina.app.AppTest" time="0.002"/>
   <testcase name="DateTimeSub_test2" classname="com.uregina.app.AppTest" time="0.0"/>
-  <testcase name="DateTimeSub_test3" classname="com.uregina.app.AppTest" time="0.001"/>
+  <testcase name="DateTimeSub_test3" classname="com.uregina.app.AppTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
